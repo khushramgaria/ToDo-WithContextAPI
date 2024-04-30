@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useTodo } from '../contexts';
+import { FaSave, FaEdit } from "react-icons/fa";
 
 function TodoItem({ todo }) {
     const [isTodoEditable, setIsTodoEditable] = useState(false)
@@ -48,7 +49,7 @@ function TodoItem({ todo }) {
                 }}
                 disabled={todo.completed}
             >
-                {isTodoEditable ? "📁" : "✏️"}
+                {isTodoEditable ? <FaSave /> : <FaEdit />}
             </button>
             {/* Delete Todo Button */}
             <button
